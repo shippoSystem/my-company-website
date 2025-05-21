@@ -1,0 +1,7 @@
+# ไฟล์ที่ต้องการให้ Prettier ข้าม
+node_modules
+.next
+build
+public
+dist
+coverage

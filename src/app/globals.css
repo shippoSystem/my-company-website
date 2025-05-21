@@ -1,0 +1,103 @@
+@import "tailwindcss";
+/* ตัวอย่างการใช้ M PLUS 1p ซึ่งเป็นฟอนต์ UD */
+
+/* กำหนดฟอนต์ UD ที่โหลดมาเก็บไว้ที่เครื่อง */
+@font-face {
+  font-family: 'UDFont';
+  src: url('/fonts/Aozora-Mincho-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --color-shippo: #10A1E9;
+  /* สีหลัก shippo - ฟ้า */
+  --color-shippo-hard: #003471;
+  /* สีเข้ม shippo - น้ำเงินเข้ม */
+  --color-shippo-soft: #EFF5FB;
+  /* สีอ่อน shippo - ฟ้าอ่อนมาก */
+  --font-ud: 'UDFont', sans-serif;
+  /* เพิ่มตัวแปรสำหรับฟอนต์ UD */
+}
+
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* เพิ่มกฎนี้ต่อท้ายไฟล์ globals.css ที่มีอยู่แล้ว */
+
+:lang(th) {
+  font-family: var(--font-thai-sarabun);
+}
+
+/* หรือถ้าต้องการใช้ฟอนต์ Thai Sarabun กับทั้งหน้าเว็บ */
+body:lang(th) {
+  font-family: var(--font-thai-sarabun);
+}
+
+
+:lang(jp) {
+  font-family: var(--font-jp);
+}
+
+/* หรือถ้าต้องการใช้ฟอนต์ Thai Sarabun กับทั้งหน้าเว็บ */
+body:lang(jp) {
+  font-family: var(--font-jp);
+}
+
+/* คลาสสำหรับฟอนต์ UD */
+.font-ud {
+  font-family: var(--font-ud), 'UDFont', monospace !important;
+}
+
+/* คลาสสำหรับสีข้อความ */
+.text-shippo {
+  color: var(--color-shippo);
+}
+
+.text-shippo-hard {
+  color: var(--color-shippo-hard);
+}
+
+.text-shippo-soft {
+  color: var(--color-shippo-soft);
+}
+
+/* คลาสสำหรับสีพื้นหลัง */
+.bg-shippo {
+  background-color: var(--color-shippo);
+}
+
+.bg-shippo-hard {
+  background-color: var(--color-shippo-hard);
+}
+
+.bg-shippo-soft {
+  background-color: var(--color-shippo-soft);
+}
